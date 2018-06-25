@@ -72,7 +72,7 @@ class NavBar extends Component {
                 <LogoImage src={Logo} />
               </Link>
             </Menu.Item>
-            <Menu.Item style={styles.text}>Local, Responsive, Regenerative</Menu.Item>
+            <Menu.Item style={styles.text}>Local, Responsible, Regenerative</Menu.Item>
             { this.rightNavs() }
           </Menu>
         </NavFront>
