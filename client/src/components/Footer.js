@@ -29,7 +29,9 @@ class Footer extends Component{
         <NavFront>
           <Segment>
             <FooterContainer>
-              <Header as="h5">Sources: "https://www.epa.gov/recycle/composting-home"</Header>
+              <Header as="h6">Sources:</Header>
+              <Header as="h6">"https://www.epa.gov/recycle/composting-home"</Header>
+              <Header as="h6">"http://greenactioncentre.ca/reduce-your-waste/why-should-i-compost/"</Header>
             </FooterContainer>
           </Segment>
         </NavFront>

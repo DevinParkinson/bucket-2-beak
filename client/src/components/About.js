@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Jaren from '../images/Jaren.jpg';
 
 const AppContainer = styled.div`
-  background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_378773.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2014/04/05/11/19/background-315143_960_720.jpg");
   background-size: cover;
   margin-left: 7%;
   margin-right: 7%;
