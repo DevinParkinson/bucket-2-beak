@@ -1,8 +1,10 @@
-class SignupMailer < ApplicationMailer
-  default from: ENV['MAIL_FROM']
+class UserNotifier < ActionMailer::Base
+  default :from => 'dparky13@icloud.com'
 
- def new_signup(user)
-   @user = user
-   mail(to: @user.email, subject: 'Thank you for signing up!')
- end
+  # send a signup email to the user, pass in the user object that   contains the user's email address
+  def send_signup_email(user)
+    @user = user
+    mail( :to => @user.email,
+    :subject => 'Thanks for signing up for our amazing app' )
+  end
 end
