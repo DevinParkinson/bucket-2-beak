@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Image, Segment } from 'semantic-ui-react';
+import { Header, Image, Segment, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 import Jaren from '../images/Jaren.jpg';
 
@@ -8,7 +8,7 @@ const AppContainer = styled.div`
   background-size: cover;
   margin-left: 10%;
   margin-right: 10%;
-  height: 100vh;
+  height: auto;
   font-family: Courier;
   color: #ffffff;
 `
@@ -26,9 +26,9 @@ class About extends React.Component {
     return (
       <FullApp>
         <AppContainer>
-          <Header as='h1' style={styles.head}>Welcome To Bucket To Beak</Header>
-          <Image src={Jaren} style={styles.photo} />
+          <Header as='h2' style={styles.head}>Welcome To Bucket To Beak</Header>
           <Segment raised padded style={styles.about}>
+            <Image src={Jaren} style={styles.photo} />
             <Header as='h1'>About Bucket To Beak</Header>
             <p>   Hi, I'm Jaren, the owner of Bucket To Beak Curbside Composting. I was born and raised right here in summit county, just on the other side of the mountain in Oakley. Despite growing up in a rural agricultural community, I didn't have much interest in agriculture. And when it came time to graduate high school I began to see how much greener the grass looked on the other side of those beautiful mountains, and quickly moved to the Salt Lake valley.
 
@@ -36,7 +36,7 @@ class About extends React.Component {
 
     I began doing what I could to be self sustainable on our small urban lot by raising quail and rabbits, composting and gardening. I also started a YouTube Channel to teach others. Then in the fall of 2017 a remarkable opportunity came up to move back to Oakley onto a 2 acre property where I could expand my operations and do more. I had been wanting to start a large composting operation for some time, and now I had the space to do it. And so Bucket To Beak was born.</p>
           </Segment>
-          <Segment raised padded style={styles.about2}>
+          <Segment raised padded style={styles.about}>
             <Header as='h2'>Why Is Composting Important?</Header>
             <p>Did you know that 40% of our food goes to waste, uneaten? That's 20 pounds per person per month in the U.S. Reducing consumption should be priority 1, and donating extra food to those in need should come next. But what's left after that usually ends up in our landfills. This produces large amounts of methane, a much more dangerous greenhouse gas than co2
 
@@ -44,7 +44,7 @@ class About extends React.Component {
 
   There an old proverb that's says we owe our entire existence to six inches of topsoil and the fact that it rains. Well that first part of the equation is being depleted at an alarming rate, and nothing is being done comparatively to restore it. This is why composting is so important. We need to do our part to rebuild the topsoil that we will eventually run out of, by turning our unused food into compost.</p>
           </Segment>
-          <Segment raised padded style={styles.about2}>
+          <Segment raised padded style={styles.about}>
             <Header as='h2'>Why should I choose Bucket To Beak to compost my scraps?</Header>
             <p>Several things make Bucket To Beak stand out from other composting companies. First of all, we donate all of our compost to responsible local farms and gardens. This not only helps us build are topsoil locally, but it also improves the quality of our local food.
 
@@ -52,6 +52,7 @@ class About extends React.Component {
 
   Feeding the waste to the birds also supplements their diet up to 100% depending on the time of year. This reduces the burden on shipping in feed, and also produces high quality eggs which we donate to those of our community who are in need.</p>
           </Segment>
+          <Divider hidden />
         </AppContainer>
       </FullApp>
     )
@@ -64,7 +65,7 @@ const styles = {
     float: "right",
     height: "30vh",
     marginRight: "1vw",
-    boxShadow: "0 0 15px green"
+    boxShadow: "0 0 15px black"
   },
   head: {
     color: "#ffffff",
@@ -75,18 +76,9 @@ const styles = {
     display: "block",
     backgroundColor: "#ffffff",
     color: "#000000",
-    marginLeft: "2vw",
-    marginRight: "17vw",
-    boxShadow: " 0 0 15px #000000"
-  },
-  about2: {
-    display: "block",
-    backgroundColor: "#ffffff",
-    color: "#000000",
-    marginLeft: "2vw",
-    marginRight: "2vw",
-    marginTop: "4vh",
-    marginBottom: "4vh",
+    marginLeft: "4vw",
+    marginRight: "4vw",
+    marginTop: "8vh",
     boxShadow: " 0 0 15px #000000"
   }
 }

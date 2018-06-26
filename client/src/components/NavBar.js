@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Image, Divider, Icon } from 'semantic-ui-react';
+import { Menu, Image, Divider, Icon, Responsive } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../actions/auth';
@@ -21,6 +21,8 @@ const NavBack = styled.div`
 `
 
 const NavFront = styled.div`
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   display: block;
   align-self: center;
@@ -72,7 +74,13 @@ class NavBar extends Component {
                 <LogoImage src={Logo} />
               </Link>
             </Menu.Item>
-            <Menu.Item style={styles.text}>Local, Responsible, Regenerative</Menu.Item>
+            <Menu.Item>
+              <Responsive minWidth={700}>
+                <p style={styles.text}>
+                  Local, Responsible, Regenerative
+                </p>
+              </Responsive>
+            </Menu.Item>
             { this.rightNavs() }
           </Menu>
         </NavFront>

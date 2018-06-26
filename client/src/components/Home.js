@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Button } from 'semantic-ui-react';
+import { Header, Button, Grid, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
@@ -16,7 +16,7 @@ const AppContainer = styled.div`
   background-size: cover;
   margin-left: 10%;
   margin-right: 10%;
-  height: auto;
+  height: 100%;
   text-align: center;
   font-family: Courier;
   color: #ffffff;
@@ -30,8 +30,6 @@ const FullApp = styled.div`
 `
 
 const Carousel1 = styled(Carousel)`
-  height: 100vh !important;
-  width: 120vw !important;
   display: flex !important;
   justify-content: center !important;
 `
@@ -47,25 +45,41 @@ class Home extends Component {
             </Button>
           </Link>
           <Header as='h1' style={{fontFamily: 'Times New Roman', color: "#ffffff"}}>Bucket To Beak Curbside Composting</Header>
-          <Carousel1 autoPlay infiniteLoop width="fluid" showArrows={true}>
-              <div>
-                  <img src={Compost1} alt='Pic1' />
-                  <p className="legend">Bilge water yardarm chase Yellow Jack splice the main brace bounty skysail lateen sail lanyard Sea Legs. Argggggh</p>
-              </div>
-              <div>
-                  <img src={Compost2} alt='Pic2' />
-                  <p className="legend">Chantey bucko Davy Jones Locker pressgang avast tack nipper American Main wherry broadside. Splice the main brace driver careen Jack Tar maroon long boat red ensign gangway lanyard chandler.</p>
-              </div>
-              <div>
-                  <img src={Compost3} alt='Pic3' />
-                  <p className="legend">Heave down barque deadlights rutters no prey, no pay league grapple quarter jolly boat capstan. Starboard grog blossom spanker matey lanyard parrel snow tender boom rigging.</p>
-              </div>
-              <div>
-                  <img src={Compost4} alt='Pic4' />
-                  <p className="legend">Measured fer yer chains Yellow Jack spyglass Jack Tar no prey, no pay yardarm spirits sutler scuppers six pounders.</p>
-              </div>
-        </Carousel1>
-        </AppContainer>
+          <Grid>
+            <Carousel1 autoPlay infiniteLoop width="fluid" showArrows={true}>
+                <div>
+                    <img src={Compost1} alt='Pic1' />
+                    <p className="legend">Bilge water yardarm chase Yellow Jack splice the main brace bounty skysail lateen sail lanyard Sea Legs. Argggggh</p>
+                </div>
+                <div>
+                    <img src={Compost2} alt='Pic2' />
+                    <p className="legend">Chantey bucko Davy Jones Locker pressgang avast tack nipper American Main wherry broadside. Splice the main brace driver careen Jack Tar maroon long boat red ensign gangway lanyard chandler.</p>
+                </div>
+                <div>
+                    <img src={Compost3} alt='Pic3' />
+                    <p className="legend">Heave down barque deadlights rutters no prey, no pay league grapple quarter jolly boat capstan. Starboard grog blossom spanker matey lanyard parrel snow tender boom rigging.</p>
+                </div>
+                <div>
+                    <img src={Compost4} alt='Pic4' />
+                    <p className="legend">Measured fer yer chains Yellow Jack spyglass Jack Tar no prey, no pay yardarm spirits sutler scuppers six pounders.</p>
+                </div>
+            </Carousel1>
+            <Header style={styles.text}>What else do we want to add on this page?</Header>
+        </Grid>
+        <Header as='h1' style={styles.text}>Here's How It All Works</Header>
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+        <Divider hidden />
+          </AppContainer>
       </FullApp>
     );
   }
