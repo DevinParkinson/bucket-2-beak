@@ -6,8 +6,8 @@ import Jaren from '../images/Jaren.jpg';
 const AppContainer = styled.div`
   background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_378773.jpg");
   background-size: cover;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
   height: auto;
   font-family: Courier;
   color: #ffffff;

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Logo from '../images/Fiverr.png';
 
 const LogoImage = styled(Image)`
-  height: 10vh;
+  height: 12vh;
   width: auto;
   display: flex;
   justify-content: center;
@@ -26,8 +26,8 @@ const NavFront = styled.div`
   background-color: white;
   display: block;
   align-self: center;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 7%;
+  margin-right: 7%;
 `
 
 class NavBar extends Component {
