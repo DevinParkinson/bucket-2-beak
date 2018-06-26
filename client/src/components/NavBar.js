@@ -59,7 +59,6 @@ class NavBar extends Component {
             About
           </Link>
         </Menu.Item>
-        <Divider hidden />
       </Menu.Menu>
     );
   }
