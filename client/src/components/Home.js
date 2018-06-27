@@ -127,19 +127,19 @@ class Home extends Component {
                       1 Sign Up
                       <Icon name='dropdown' />
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 0}><p><Link to="/register">Sign up</Link> for a monthly membership to receive weekly benefits</p></Accordion.Content>
+                    <Accordion.Content active={activeIndex === 0}><p style={styles.text}><Link to="/register">Sign up</Link> for a monthly membership to receive weekly benefits</p></Accordion.Content>
                     <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick} style={styles.texts}>
                       <Icon name='leaf' />
                       2) Fill Up The Bin We Provide
                       <Icon name='dropdown' />
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 1}><p style={styles.texts}>As you eat during the week, simply place any leftover food (eggshells, apple cores, etc...) into the bin we provide. Helping you cut down on your trash while also helping you eat healthier and happier.</p></Accordion.Content>
+                    <Accordion.Content active={activeIndex === 1}><p style={styles.text}>As you eat during the week, simply place any leftover food (eggshells, apple cores, etc...) into the bin we provide. Helping you cut down on your trash while also helping you eat healthier and happier.</p></Accordion.Content>
                     <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick} style={styles.texts}>
                       <Icon name='leaf' />
                       3) Take Out The Trash
                       <Icon name='dropdown' />
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 2}><p style={styles.texts}>Once a week, just take your trash out and we will replace the bins for you so you can start all over again. Giving you that warm fuzzy feeling that only taking out the trash can can do.</p></Accordion.Content>
+                    <Accordion.Content active={activeIndex === 2}><p style={styles.text}>Once a week, just take your trash out and we will replace the bins for you so you can start all over again. Giving you that warm fuzzy feeling that only taking out the trash can can do.</p></Accordion.Content>
                   </Accordion>
                 </Segment>
                 <Divider hidden />
@@ -156,18 +156,20 @@ const styles = {
   text: {
     marginLeft: "2vw",
     textAlign: "left",
-    color: "#ffffff",
+    color: "black",
     fontFamily: "Courier"
   },
   texts: {
     color: "#00a224",
     fontFamily: "Courier",
-    textAlign: "left"
+    textAlign: "left",
+    textDecoration: "underline",
   },
   atexts: {
     color: "#00a224",
     fontFamily: "Courier",
     textAlign: "center",
+    textDecoration: "underline",
   },
   rtext: {
     color: "white",
@@ -190,7 +192,7 @@ const styles = {
     overFlow: "auto",
   },
   accordion: {
-    marginLeft: "2vw",
+    marginLeft: "3vw",
     marginRight: "1vw",
     textAlign: "left",
     color: "black"
