@@ -110,9 +110,6 @@ class Home extends Component {
                 </Segment>
               </Grid.Column>
               <Grid.Column style={styles.grid}>
-                <Segment style={styles.slide}>
-                  <Header style={styles.text}>More to come here...</Header>
-                </Segment>
               </Grid.Column>
             </Grid.Row>
           </Grid>
