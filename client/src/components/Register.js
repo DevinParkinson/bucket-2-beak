@@ -3,7 +3,7 @@ import { Header, Form, Button, Segment, Image, Label, Input, Divider } from 'sem
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
-import BriantreeDrop from './BraintreeDrop';
+// import BriantreeDrop from './BraintreeDrop';
 
 class Register extends Component {
   state = { email: '', password: '', passwordConfirmation: '', amount: '' };
@@ -66,16 +66,16 @@ class Register extends Component {
           </Form.Field>
           <Segment basic textAlign='center'>
             <Button type='submit'>Submit</Button>
-          </Segment>
-            </Form>
-            <Segment basic textAlign='center'>
-            <Header as='h1' textAlign='center'>React Payments</Header>
-            <Image centered size='small' src='http://www.homedeliveryscript.com/uploads/general-store.jpg' />
-            <Label color='green'>Payment Amount</Label>
-            <Input value={amount} disabled style={{ fontSize: '18px' }} />
-            <Divider />
-            <BriantreeDrop amount={amount} />
-          </Segment>
+          // </Segment>
+          //   </Form>
+          //   <Segment basic textAlign='center'>
+          //   <Header as='h1' textAlign='center'>React Payments</Header>
+          //   <Image centered size='small' src='http://www.homedeliveryscript.com/uploads/general-store.jpg' />
+          //   <Label color='green'>Payment Amount</Label>
+          //   <Input value={amount} disabled style={{ fontSize: '18px' }} />
+          //   <Divider />
+          //   <BriantreeDrop amount={amount} />
+          // </Segment>
       </Segment>
     );
   }
