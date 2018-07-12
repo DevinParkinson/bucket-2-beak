@@ -8,6 +8,7 @@ import Home from './Home';
 import Footer from './Footer';
 import AuthRoute from './AuthRoute';
 import About from './About';
+import PaymentSuccess from './PaymentSuccess';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <AuthRoute exact path='/login' component={Login} />
+            <Route exact path='/payment_success' component={PaymentSuccess} />
             <AuthRoute exact path='/register' component={Register} />
             <Route component={NoMatch} />
           </Switch>

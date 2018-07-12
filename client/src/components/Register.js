@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
-import { Header, Form, Button, Segment, Image, Label, Input, Divider } from 'semantic-ui-react';
+import { Header, Form, Button, Segment, Label, Input, Divider } from 'semantic-ui-react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/auth';
 import { setFlash } from '../actions/flash';
-// import BriantreeDrop from './BraintreeDrop';
+import BriantreeDrop from './BraintreeDrop';
+
+const FullApp = styled.div`
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3380034.jpg");
+`
+const AppContainer = styled.div`
+  justify-content: center;
+  background-color: white;
+  margin-left: 7%;
+  margin-right: 7%;
+  height: 100%;
+  text-align: center;
+  font-family: Courier;
+  color: #ffffff;
+`
 
 class Register extends Component {
-  state = { email: '', password: '', passwordConfirmation: '', amount: '' };
+  state = { email: '', password: '', passwordConfirmation: '', amount: 30 };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -18,8 +37,6 @@ class Register extends Component {
   }
 
   handleChange = event => {
-    // use e to grab the id off the element also the value and set state
-    // const { id, value } = event.target;
     const id = event.target.id;
     const value = event.target.value;
     this.setState({ [id]: value });
@@ -29,44 +46,57 @@ class Register extends Component {
     const { email, password, passwordConfirmation, amount } = this.state;
 
     return (
-      <Segment basic>
-        <Header as='h1' textAlign='center'>Register Component</Header>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Field>
-            <label htmlFor='email'>Email</label>
-            <input
-              id='email'
-              placeholder='Email'
-              required
-              value={email}
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label htmlFor='password'>Password</label>
-            <input
-              id='password'
-              placeholder='Password'
-              type='password'
-              required
-              value={password}
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label htmlFor='passwordConfirmation'>Password Confirmation</label>
-            <input
-              id='passwordConfirmation'
-              placeholder='Password Confirmation'
-              type='password'
-              required
-              value={passwordConfirmation}
-              onChange={this.handleChange}
-            />
-          </Form.Field>
-          <Segment basic textAlign='center'>
-            <Button type='submit'>Submit</Button>
-      </Segment>
+      <FullApp>
+        <AppContainer>
+          <Segment basic>
+            <Header as='h1' textAlign='center'>Sign Up Now!</Header>
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Field>
+                <label htmlFor='email'>Email</label>
+                <input
+                  id='email'
+                  placeholder='Email'
+                  required
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='password'>Password</label>
+                <input
+                  id='password'
+                  placeholder='Password'
+                  type='password'
+                  required
+                  value={password}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='passwordConfirmation'>Password Confirmation</label>
+                <input
+                  id='passwordConfirmation'
+                  placeholder='Password Confirmation'
+                  type='password'
+                  required
+                  value={passwordConfirmation}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Segment basic textAlign='center'>
+                <Button type='submit'>Submit</Button>
+              </Segment>
+                </Form>
+                <Segment basic textAlign='center'>
+                <Header as='h1' textAlign='center'>React Payments</Header>
+                <Label color='green'>Amount Per Month</Label>
+                <Input value={amount} disabled style={{ fontSize: '18px' }} />
+                <Divider />
+                <BriantreeDrop amount={amount} />
+              </Segment>
+          </Segment>
+        </AppContainer>
+      </FullApp>
     );
   }
 }
