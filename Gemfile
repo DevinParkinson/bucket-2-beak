@@ -12,13 +12,10 @@ gem 'rails', '~> 5.1.6'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'haml-rails'
-gem 'sendgrid-ruby'
 gem 'omniauth'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'braintree'
-gem 'figaro'
-gem 'letter_opener', group: :development
 gem 'dotenv-rails'
 
 group :development, :test do
