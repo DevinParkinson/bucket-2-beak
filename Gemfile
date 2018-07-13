@@ -17,7 +17,6 @@ gem 'omniauth'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'braintree'
-gem 'figaro'
 gem 'letter_opener', group: :development
 gem 'dotenv-rails'
 
