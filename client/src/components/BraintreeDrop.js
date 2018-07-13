@@ -28,7 +28,7 @@ class BraintreeDrop extends Component {
       })
       .catch( res => {
         dispatch(setHeaders(res.headers));
-        dispatch(setFlash('Error Setting Up Payments. Try Again!', 'red'));
+        dispatch(setFlash('Error Setting Up Payment Plan. Try Again!', 'red'));
     });
   }
 

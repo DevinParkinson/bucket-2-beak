@@ -7,8 +7,9 @@ const renderSubmitButton = ({onClick, isDisabled, text}) => {
       primary
       onClick={onClick}
       disabled={isDisabled}
-    > {text}
-  </Button>
+    >
+      {text}
+    </Button>
   )
 }
 

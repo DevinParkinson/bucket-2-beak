@@ -25,7 +25,7 @@ const AppContainer = styled.div`
 `
 
 class Register extends Component {
-  state = { email: '', password: '', passwordConfirmation: '', amount: 30 };
+  state = { email: '', password: '', passwordConfirmation: '', amount: 30.00 };
 
   handleSubmit = event => {
     event.preventDefault();
@@ -88,9 +88,8 @@ class Register extends Component {
               </Segment>
                 </Form>
                 <Segment basic textAlign='center'>
-                <Header as='h1' textAlign='center'>React Payments</Header>
-                <Label color='green'>Amount Per Month</Label>
-                <Input value={amount} disabled style={{ fontSize: '18px' }} />
+                <Header as='h1' textAlign='center'>Get Started with your Drop in the Bucket Plan</Header>
+                <Header as='h5' textAlign='center'>Getting started is easy. Just sign up for our $30/month plan. We will do the rest. Payments start three days after you start the plan (So we can get your bucket out to you), then your payments will be charged monthly.</Header>
                 <Divider />
                 <BriantreeDrop amount={amount} />
               </Segment>
