@@ -1,5 +1,4 @@
 class SignupController < ApplicationController
-    default from: 'buckettobeak@gmail.com'
 
     def send_enabled_message(user)
       @user = user
@@ -10,5 +9,5 @@ class SignupController < ApplicationController
       @user = user
       mail(:to => 'buckettobeak@gmail.com', :subject => "New User #{user} created please review and enable.")
     end
-    
+
 end
