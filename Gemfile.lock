@@ -180,7 +180,7 @@ DEPENDENCIES
   omniauth
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.7)
+  puma
   rails (~> 5.1.6)
   spring
   spring-watcher-listen (~> 2.0.0)
