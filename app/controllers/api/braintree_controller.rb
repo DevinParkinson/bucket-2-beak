@@ -22,4 +22,8 @@ class Api::BraintreeController < ApplicationController
       render json: { errors: result.errors }
     end
   end
+
+  def subscription
+    
+  end
 end

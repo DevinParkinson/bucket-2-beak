@@ -13,8 +13,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma'
 gem 'haml-rails'
 gem 'omniauth'
-gem 'devise'
-gem 'devise_token_auth'
 gem 'braintree'
 gem 'dotenv-rails'
 
