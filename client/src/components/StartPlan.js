@@ -6,7 +6,7 @@ class StartPlan extends Component {
   render(){
     return (
       <div>
-      Let's do this.
+      Let's do this. Getting started
       </div>
     )
   }
