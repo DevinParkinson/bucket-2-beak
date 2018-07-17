@@ -16,17 +16,8 @@ class Api::UserController < ApplicationController
   # POST /users
   def create
     @user = User.create(user_params)
-
     responder do |format|
-      if @user.save
-        UserMailer.with(user: @user).send_signup_email.deliver_now
-
-        format.html { redirect_to(@user, notice: 'User was successfully created.') }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+      UserNotifier.with(user: @user).send_signup_email.deliver
     end
   end
 

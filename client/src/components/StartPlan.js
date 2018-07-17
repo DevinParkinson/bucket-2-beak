@@ -12,6 +12,8 @@ const FullApp = styled.div`
   background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3380034.jpg");
 `
 const AppContainer = styled.div`
+  height: 100%;
+  width: 100%;
   justify-content: center;
   background-color: white;
   margin-left: 7%;
