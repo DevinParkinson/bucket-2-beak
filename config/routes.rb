@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     post '/payment', to: 'braintree#payment'
   end
 
+  namespace :api do
+    resources :user
+  end
+
   #Do not place any routes below this one
   get '*other', to: 'static#index'
 end

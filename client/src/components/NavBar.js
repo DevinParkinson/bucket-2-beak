@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Menu, Image, Divider, Icon, Responsive } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { handleLogout } from '../actions/auth';
 import styled from 'styled-components';
 import Logo from '../images/Fiverr.png';
 
@@ -33,26 +32,8 @@ const NavFront = styled.div`
 class NavBar extends Component {
 
   rightNavs = () => {
-    const { user, dispatch, history } = this.props;
-
-    if (user.id) {
-      return (
-        <Menu.Menu position='right'>
-          <Menu.Item
-            name='Logout'
-            onClick={() => dispatch(handleLogout(history))}
-          />
-        </Menu.Menu>
-      );
-    }
     return (
       <Menu.Menu position='right'>
-        <Menu.Item>
-          <Link to='/login' style={{color: '#000000'}}>
-          <Icon name='user outline' />
-          Login
-          </Link>
-        </Menu.Item>
         <Menu.Item>
           <Link to='/about' style={{color: '#000000'}}>
             <Icon name='info circle' />

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UserController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
@@ -15,9 +15,9 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(params[:user])
+    @user = User.create(user_params)
 
-    respond_to do |format|
+    responder do |format|
       if @user.save
         UserMailer.with(user: @user).send_signup_email.deliver_now
 

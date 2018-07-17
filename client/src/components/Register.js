@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { Header, Form, Button, Segment, Divider } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router'
 import { registerUser } from '../actions/auth';
-import { setFlash } from '../actions/flash';
-import BriantreeDrop from './BraintreeDrop';
 
 const FullApp = styled.div`
   height: 100%;
@@ -21,19 +20,23 @@ const AppContainer = styled.div`
   height: 100%;
   text-align: center;
   font-family: Courier;
-  color: #ffffff;
+`
+const Disclaimers = styled.div`
+  font-size: 2vh;
+  text-align: left;
+  font-family: Courier;
 `
 
 class Register extends Component {
-  state = { email: '', password: '', passwordConfirmation: '', amount: 30.00 };
+  initialState = { email: '', name: '', address: '', city: '', state: '', zip: '', phone: '', redirect: false, };
+  state = { ...this.initialState }
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
-    const { dispatch, history } = this.props;
-    if (password === passwordConfirmation) {
-      dispatch(registerUser(email, password, passwordConfirmation, history));
-    } else dispatch(setFlash('Passwords do not match!, please try again', 'red'));
+  handleSubmit = ( e ) => {
+    e.preventDefault();
+    const user = {...this.state};
+    const { dispatch } = this.props;
+      dispatch(registerUser(user));
+      this.setState({ redirect: true})
   }
 
   handleChange = event => {
@@ -42,8 +45,14 @@ class Register extends Component {
     this.setState({ [id]: value });
   }
 
+  redirectMe = () => {
+    if (this.state.redirect) {
+      return (<Redirect to="/startplan" />)
+    }
+  }
+
   render() {
-    const { email, password, passwordConfirmation, amount } = this.state;
+    const { email, name, address, city, state, zip, phone } = this.state;
 
     return (
       <FullApp>
@@ -62,39 +71,78 @@ class Register extends Component {
                 />
               </Form.Field>
               <Form.Field>
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='name'>Name</label>
                 <input
-                  id='password'
-                  placeholder='Password'
-                  type='password'
+                  id='name'
+                  placeholder='Name'
                   required
-                  value={password}
+                  value={name}
                   onChange={this.handleChange}
                 />
               </Form.Field>
               <Form.Field>
-                <label htmlFor='passwordConfirmation'>Password Confirmation</label>
+                <label htmlFor='address'>Address</label>
                 <input
-                  id='passwordConfirmation'
-                  placeholder='Password Confirmation'
-                  type='password'
+                  id='address'
+                  placeholder='Address'
                   required
-                  value={passwordConfirmation}
+                  value={address}
                   onChange={this.handleChange}
                 />
               </Form.Field>
-              <Segment basic textAlign='center'>
-                <Button type='submit'>Submit</Button>
-              </Segment>
-                </Form>
-                <Segment basic textAlign='center'>
-                <Header as='h1' textAlign='center'>Get Started with your Drop in the Bucket Plan</Header>
-                <Header as='h5' textAlign='center'>Getting started is easy. Just sign up for our $30/month plan. We will do the rest. Payments start three days after you start the plan (So we can get your bucket out to you), then your payments will be charged monthly.</Header>
-                <Divider />
-                <BriantreeDrop amount={amount} />
-              </Segment>
-          </Segment>
+              <Form.Field>
+                <label htmlFor='city'>City</label>
+                <input
+                  id='city'
+                  placeholder='City'
+                  required
+                  value={city}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='state'>State</label>
+                <input
+                  id='state'
+                  placeholder='State'
+                  required
+                  value={state}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='zip'>Zip Code</label>
+                <input
+                  id='zip'
+                  placeholder='Zip Code'
+                  required
+                  value={zip}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label htmlFor='phone'>Phone #</label>
+                <input
+                  id='phone'
+                  placeholder='Phone #'
+                  required
+                  value={phone}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+            <Segment basic textAlign='center'>
+              <Button type='submit'>Submit</Button>
+            </Segment>
+          </Form>
+        </Segment>
+        <Disclaimers>
+          <div>
+            All of your information is private and will not be shared with anyone for any reason beyond providing you Bucket To Beak products, or responding to any requests, complains, comments, or concerns.
+          </div>
+          <Divider hidden />
+        </Disclaimers>
         </AppContainer>
+        {this.redirectMe()}
       </FullApp>
     );
   }
