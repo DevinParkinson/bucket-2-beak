@@ -9,7 +9,7 @@ const PaymentSuccess = ({ location: { state } }) => {
         <Header as='h1' color='green'>Thank You For Your Purchase!</Header>
         <p>You have been successfully charged: ${state.amount}</p>
         <p>Your Transcation Id is: {state.transactionId}</p>
-        <Link to='/'>Start Over</Link>
+        <Link to='/'>Home</Link>
       </Segment>
     )
   else

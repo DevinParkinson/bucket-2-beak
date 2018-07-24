@@ -59,6 +59,12 @@ class Register extends Component {
         <AppContainer>
           <Segment basic>
             <Header as='h1' textAlign='center'>Sign Up Now!</Header>
+              <Disclaimers>
+                <div>
+                  All of your information is private and will not be shared with anyone for any reason beyond providing you Bucket To Beak products, or responding to any requests, complains, comments, or concerns.
+                </div>
+                <Divider hidden />
+              </Disclaimers>
             <Form onSubmit={this.handleSubmit}>
               <Form.Field>
                 <label htmlFor='email'>Email</label>
@@ -135,12 +141,6 @@ class Register extends Component {
             </Segment>
           </Form>
         </Segment>
-        <Disclaimers>
-          <div>
-            All of your information is private and will not be shared with anyone for any reason beyond providing you Bucket To Beak products, or responding to any requests, complains, comments, or concerns.
-          </div>
-          <Divider hidden />
-        </Disclaimers>
         </AppContainer>
         {this.redirectMe()}
       </FullApp>

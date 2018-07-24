@@ -9,6 +9,7 @@ import BraintreeDropin from 'braintree-dropin-react';
 import BraintreeSubmitButton from './BraintreeSubmitButton';
 import axios from 'axios';
 
+
 class BraintreeDrop extends Component {
   state = {
     loaded: false,
@@ -62,6 +63,7 @@ class BraintreeDrop extends Component {
       return (
         <Segment basic textAlign='center'>
           <BraintreeDropin
+            style={{marginRight: "7%"}}
             braintree={braintree}
             authorizationToken={token}
             handlePaymentMethod={this.handlePaymentMethod}
@@ -77,5 +79,6 @@ class BraintreeDrop extends Component {
       )
   }
 }
+
 
 export default connect()(BraintreeDrop);

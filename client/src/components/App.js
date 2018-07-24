@@ -4,7 +4,6 @@ import NavBar from './NavBar';
 import Register from './Register';
 import Flash from './Flash';
 import Home from './Home';
-import Footer from './Footer';
 import About from './About';
 import StartPlan from './StartPlan'
 import PaymentSuccess from './PaymentSuccess';
@@ -27,7 +26,6 @@ class App extends Component {
             <Route component={NoMatch} />
           </Switch>
         </FetchUser>
-        <Footer />
       </div>
     );
   }
