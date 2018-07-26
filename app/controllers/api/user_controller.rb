@@ -15,25 +15,28 @@ class Api::UserController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-    responder do |format|
-      UserNotifier.with(user: @user).send_signup_email.deliver
-    end
-  end
-
-  # PATCH/PUT /users/1
-  def update
-    if @user.update(user_params)
-      render json: @user
+    @user = User.new(user_params)
+    if @user.save
+      UserNotifier.send_signup_email(@user).deliver
+      redirect_to(@user, :notice => 'User created')
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render :action => 'new'
     end
   end
 
-  # DELETE /users/1
-  def destroy
-    @user.destroy
-  end
+  # # PATCH/PUT /users/1
+  # def update
+  #   if @user.update(user_params)
+  #     render json: @user
+  #   else
+  #     render json: @user.errors, status: :unprocessable_entity
+  #   end
+  # end
+  #
+  # # DELETE /users/1
+  # def destroy
+  #   @user.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

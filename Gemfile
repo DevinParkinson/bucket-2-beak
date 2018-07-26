@@ -18,6 +18,7 @@ gem 'devise_token_auth'
 gem 'braintree'
 gem 'dotenv-rails'
 gem "responders"
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'pry'
