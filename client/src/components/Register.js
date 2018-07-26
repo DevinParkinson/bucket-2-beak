@@ -28,7 +28,7 @@ const Disclaimers = styled.div`
 `
 
 class Register extends Component {
-  initialState = { email: '', name: '', address: '', city: '', state: '', zip: '', phone: '', redirect: false, };
+  initialState = { email: '', name: '', address: '', city: '', state: '', zip: '', phone: '', redirect: false };
   state = { ...this.initialState }
 
   handleSubmit = ( e ) => {
