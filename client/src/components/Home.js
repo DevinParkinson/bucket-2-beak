@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Button, Grid, Divider, Segment, Accordion, Icon } from 'semantic-ui-react';
+import { Header, Button, Grid, Divider, Segment, Accordion, Icon, Image } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
@@ -62,6 +62,52 @@ class Home extends Component {
             <Grid.Row>
               <Grid.Column>
                 <Segment raised padded style={styles.compost}>
+                  <Header style={styles.atexts}>Local,   Responsible,   Regenerative</Header>
+                  <Grid doubling columns={3} style={styles.grid}>
+                    <Grid.Column floated="left" stretched>
+                      <Header style={styles.texts}>Local</Header>
+                      <ul>Pillage six pounders American Main Davy Jones Locker grapple Arr lass square-rigged rum Nelsons folly.</ul>
+                      <ul>Schooner tack Buccaneer Sink me knave gunwalls walk the plank hardtack cog skysail.</ul>
+                    </Grid.Column>
+                    <Grid.Column style={styles.grid} stretched>
+                      <Header style={styles.texts}>Responsible</Header>
+                      <ul>Run a rig rutters flogging Buccaneer Privateer boom clipper quarterdeck killick Pirate Round. Fire in the hole matey hempen halter grog keel topmast black jack mizzen to go on account warp.</ul>
+                    </Grid.Column>
+                    <Grid.Column style={styles.grid} floated="right" stretched>
+                      <Header style={styles.texts}>Regenerative</Header>
+                      <ul>Lass trysail handsomely scallywag warp salmagundi log chandler draught Sail ho. Lass hempen halter no prey, no pay Admiral of the Black plunder prow Letter of Marque barque topgallant parley.</ul>
+                    </Grid.Column>
+                  </Grid>
+                </Segment>
+                <Grid>
+                  <Grid.Row>
+                    <Grid.Column>
+                      <Segment style={styles.accordion} raised padded>
+                        <Header style={styles.ctexts}>Starting is as easy as 1, 2, 3!</Header>
+                        <Accordion fluid inverted>
+                          <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick} style={styles.texts}>
+                            1) Sign Up
+                            <Image style={styles.images} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIJuQBLyCYV8dKwuOyrygw-696wzFipw2KgSObAdfrOBWCIkn4" />
+                          </Accordion.Title>
+                          <Accordion.Content active={activeIndex === 0}><p style={styles.text}><Link to="/register">Sign up</Link> for a monthly membership to receive weekly benefits</p></Accordion.Content>
+                          <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick} style={styles.texts}>
+                            2) Fill Up The Bin We Provide
+                            <Image style={styles.images} src="https://www.recycleaway.com/assets/images/product-photos/busch%20systems/hires/kc2000-kitchencomposter.jpg" />
+                          </Accordion.Title>
+                          <Accordion.Content active={activeIndex === 1}><p style={styles.text}>As you eat during the week, simply place any leftover food (eggshells, apple cores, etc...) into the bin we provide. Helping you cut down on your trash while also helping you eat healthier and happier.</p></Accordion.Content>
+                          <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick} style={styles.texts}>
+                            3) Let it Grow!
+                            <Icon name='dropdown' />
+                            <Image style={styles.images} src="https://udemy-images.udemy.com/course/750x422/232022_ab57_2.jpg" />
+                          </Accordion.Title>
+                          <Accordion.Content active={activeIndex === 2}><p style={styles.text}>Once a week, just take your trash out and we will replace the bins for you so you can start all over again. Giving you that warm fuzzy feeling that only taking out the trash can can do.</p></Accordion.Content>
+                        </Accordion>
+                      </Segment>
+                      <Divider hidden />
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid>
+                <Segment raised padded style={styles.compost}>
                       <Header style={styles.atexts}>What is Composting?</Header>
                       <p>According to the EPA, Compost is organic material that can be added to soil to help plants grow. Food scraps and yard waste currently make up 20 to 30 percent of what we throw away, and should be composted instead. Making compost keeps these materials out of landfills where they take up space and release methane, a potent greenhouse gas.</p>
                       <Header style={styles.atexts}>Why Should We Compost Our Food Scraps?</Header>
@@ -90,56 +136,8 @@ class Home extends Component {
                       <li>Encourages the production of beneficial bacteria and fungi that break down organic matter to create humus, a rich nutrient-filled material.</li>
                       <li>Reduces methane emissions from landfills and lowers your carbon footprint.</li>
                 </Segment>
-                <Segment raised padded style={styles.compost}>
-                  <Header style={styles.atexts}>Local,   Responsible,   Regenerative</Header>
-                  <Grid doubling columns={3} style={styles.grid}>
-                    <Grid.Column floated="left" stretched>
-                    <Header style={styles.texts}>Local</Header>
-                    <ul>Pillage six pounders American Main Davy Jones Locker grapple Arr lass square-rigged rum Nelsons folly.</ul>
-                    <ul>Schooner tack Buccaneer Sink me knave gunwalls walk the plank hardtack cog skysail.</ul>
-                    </Grid.Column>
-                    <Grid.Column style={styles.grid} stretched>
-                      <Header style={styles.texts}>Responsible</Header>
-                      <ul>Run a rig rutters flogging Buccaneer Privateer boom clipper quarterdeck killick Pirate Round. Fire in the hole matey hempen halter grog keel topmast black jack mizzen to go on account warp.</ul>
-                    </Grid.Column>
-                    <Grid.Column style={styles.grid} floated="right" stretched>
-                      <Header style={styles.texts}>Regenerative</Header>
-                      <ul>Lass trysail handsomely scallywag warp salmagundi log chandler draught Sail ho. Lass hempen halter no prey, no pay Admiral of the Black plunder prow Letter of Marque barque topgallant parley.</ul>
-                    </Grid.Column>
-                  </Grid>
-                </Segment>
               </Grid.Column>
               <Grid.Column style={styles.grid}>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-            <Grid>
-            <Grid.Row>
-              <Grid.Column>
-                <Segment style={styles.accordion} raised padded>
-                  <Header style={styles.texts}>Starting is as easy as 1, 2, 3!</Header>
-                  <Accordion fluid inverted>
-                    <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick} style={styles.texts}>
-                      <Icon name='leaf' />
-                      1 Sign Up
-                      <Icon name='dropdown' />
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 0}><p style={styles.text}><Link to="/register">Sign up</Link> for a monthly membership to receive weekly benefits</p></Accordion.Content>
-                    <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick} style={styles.texts}>
-                      <Icon name='leaf' />
-                      2) Fill Up The Bin We Provide
-                      <Icon name='dropdown' />
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 1}><p style={styles.text}>As you eat during the week, simply place any leftover food (eggshells, apple cores, etc...) into the bin we provide. Helping you cut down on your trash while also helping you eat healthier and happier.</p></Accordion.Content>
-                    <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick} style={styles.texts}>
-                      <Icon name='leaf' />
-                      3) Take Out The Trash
-                      <Icon name='dropdown' />
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 2}><p style={styles.text}>Once a week, just take your trash out and we will replace the bins for you so you can start all over again. Giving you that warm fuzzy feeling that only taking out the trash can can do.</p></Accordion.Content>
-                  </Accordion>
-                </Segment>
-                <Divider hidden />
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -189,13 +187,28 @@ const styles = {
     overFlow: "auto",
   },
   accordion: {
-    marginLeft: "3vw",
-    marginRight: "1vw",
-    textAlign: "left",
+    boxShadow: " 0 0 15px #000000",
+    marginLeft: "2vw",
     color: "black"
   },
   slide: {
     background: "transparent"
+  },
+  rtexts: {
+    color: "#00a224",
+    fontFamily: "Courier",
+    textAlign: "right",
+    textDecoration: "underline",
+  },
+  ctexts: {
+    color: "#00a224",
+    fontFamily: "Courier",
+    textAlign: "center",
+    textDecoration: "underline",
+  },
+  images: {
+    height: "15vh",
+    width: "auto"
   }
 }
 
